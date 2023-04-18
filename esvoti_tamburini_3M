@@ -1,0 +1,35 @@
+#esercizio 1
+media=float
+#inserimento voti
+with open("voti.txt","w") as file:
+    for i in range(10):
+        voto = input(f"inserisci il voto dello studente {i+1}: ")
+        file.write(voto + '\n')
+#calcolo media
+somma = 0
+studenti = 0
+with open("voti.txt", "r") as file:
+    for line in file:
+        voto = float(line.strip())
+        somma += voto
+        studenti += 1
+media = somma / studenti
+print(f"la media dei voti degli studenti della classe è: {media:.2f}")
+
+#esercizio 2 
+N = int(input("quanti studenti ci sono?"))
+#inserimento voti
+with open("voti.txt","w") as file:
+    for i in range(N):
+        voto2 = input(f"inserisci il voto dello studente {i+1}: ")
+        file.write(voto2 + '\n')
+#calcolo media
+somma2 = 0
+studenti2 = 0
+with open("voti.txt", "r") as file:
+    for line in file:
+        voto2 = float(line.strip())
+        somma2 += voto2
+        studenti2 += 1
+media2 = somma2 / studenti2
+print(f"la media dei voti degli studenti della classe è: {media2:.2f}")
